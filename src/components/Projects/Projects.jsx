@@ -1,7 +1,27 @@
-// src/components/Projects/Projects.jsx - Template
+// src/components/Projects/Projects.jsx
 import './Projects.css';
+import ProjectCard from './ProjectCard';
 
 function Projects() {
+  const projects = [
+    {
+      id: 1,
+      title: 'Weather App',
+      description: 'A web app that shows real-time weather data using the OpenWeather API.',
+      image: '/assets/images/weather-app.png',
+      github: 'https://github.com/PaNiNi005/my-weather-app',
+      demo: '#'
+    },
+    {
+      id: 2,
+      title: 'Portfolio Website',
+      description: 'My personal portfolio website to showcase my skills and projects.',
+      image: '/assets/images/portfolio.png',
+      github: 'https://github.com/PaNiNi005/Lab3_portfolio203',
+      demo: '#'
+    }
+  ];
+
   return (
     <section id="projects" className="projects section">
       <div className="container">
@@ -9,12 +29,11 @@ function Projects() {
         <p className="section-subtitle">
           Here are some of the projects I've worked on recently.
         </p>
-        
-        {/* TODO: นักศึกษาเพิ่ม project list ที่นี่ */}
+
         <div className="projects-grid">
-          <div className="project-placeholder">
-            <p>Add your projects here</p>
-          </div>
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
         </div>
       </div>
     </section>
